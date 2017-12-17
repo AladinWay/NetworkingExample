@@ -30,7 +30,7 @@ enum APIRouter: URLRequestConvertible {
         case .login:
             return "/login"
         case .articles:
-            return "/articles"
+            return "/articles/all.json"
         case .article(let id):
             return "/article/\(id)"
         }

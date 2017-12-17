@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Article {
+struct Article : Codable{
     let id: Int
     let title: String
     let image: URL
