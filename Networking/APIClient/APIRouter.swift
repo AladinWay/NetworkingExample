@@ -11,7 +11,7 @@ import Alamofire
 enum APIRouter: URLRequestConvertible {
     
     case login(email:String, password:String)
-    case articles
+    case articles(userId: Int)
     case article(id: Int)
     
     // MARK: - HTTPMethod
@@ -29,10 +29,10 @@ enum APIRouter: URLRequestConvertible {
         switch self {
         case .login:
             return "/login"
-        case .articles:
-            return "/articles/all.json"
+        case .articles(let userId):
+            return "/articles/all.json?userID=\(userId)"
         case .article(let id):
-            return "/article/\(id)"
+            return "/article/article.json?id=\(id)"
         }
     }
     

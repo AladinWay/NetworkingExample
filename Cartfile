@@ -1,1 +1,2 @@
 github "Alamofire/Alamofire" "alamofire5"
+github "aladinway/PromisedFuture"

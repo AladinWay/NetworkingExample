@@ -6,25 +6,38 @@
 //  Copyright © 2017 Alaeddine Me. All rights reserved.
 //
 
+
 import Alamofire
+import PromisedFuture
 
 class APIClient {
     @discardableResult
-    private static func performRequest<T:Decodable>(route:APIRouter, decoder: JSONDecoder = JSONDecoder(), completion:@escaping (Result<T>)->Void) -> DataRequest {
-        return Alamofire.request(route)
-                        .responseJSONDecodable (decoder: decoder){ (response: DataResponse<T>) in
-                            completion(response.result)
-        }
+    private static func performRequest<T:Decodable>(route:APIRouter, decoder: JSONDecoder = JSONDecoder()) -> Future<T> {
+        return Future(operation: { completion in
+            Alamofire.request(route).responseJSONDecodable(decoder: decoder, completionHandler: { (response: DataResponse<T>) in
+                switch response.result {
+                case .success(let value):
+                    completion(.success(value))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            })
+        })
     }
-    
-    static func login(email: String, password: String, completion:@escaping (Result<User>)->Void) {
-        performRequest(route: APIRouter.login(email: email, password: password), completion: completion)
+
+    static func login(email: String, password: String) -> Future<User> {
+        return performRequest(route: APIRouter.login(email: email, password: password))
     }
-    
-    static func getArticles(completion:@escaping (Result<[Article]>)->Void) {
+
+    static func userArticles(userID: Int) -> Future<[Article]> {
         let jsonDecoder = JSONDecoder()
         jsonDecoder.dateDecodingStrategy = .formatted(.articleDateFormatter)
-        performRequest(route: APIRouter.articles, decoder: jsonDecoder, completion: completion)
+        return performRequest(route: APIRouter.articles(userId: userID), decoder: jsonDecoder)
+    }
+
+    static func getArticle(articleID: Int) -> Future<Article> {
+        let jsonDecoder = JSONDecoder()
+        jsonDecoder.dateDecodingStrategy = .formatted(.articleDateFormatter)
+        return performRequest(route: APIRouter.article(id: articleID), decoder: jsonDecoder)
     }
 }
-

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A45F24021011BEB00DB2159 /* PromisedFuture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A45F23F21011BEA00DB2159 /* PromisedFuture.framework */; };
+		7A45F24121011BEB00DB2159 /* PromisedFuture.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7A45F23F21011BEA00DB2159 /* PromisedFuture.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7A639CC61FE7067D009B0667 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A639CC51FE7067D009B0667 /* DateFormatter.swift */; };
 		7A97FC7C1FCB231D00158615 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A97FC7B1FCB231D00158615 /* AppDelegate.swift */; };
 		7A97FC831FCB231D00158615 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A97FC821FCB231D00158615 /* Assets.xcassets */; };
@@ -29,6 +31,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				7A45F24121011BEB00DB2159 /* PromisedFuture.framework in Embed Frameworks */,
 				7A97FC951FCB267200158615 /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -37,6 +40,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7A45F23F21011BEA00DB2159 /* PromisedFuture.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromisedFuture.framework; path = Carthage/Build/iOS/PromisedFuture.framework; sourceTree = "<group>"; };
 		7A639CC51FE7067D009B0667 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		7A97FC781FCB231D00158615 /* Networking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Networking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A97FC7B1FCB231D00158615 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A45F24021011BEB00DB2159 /* PromisedFuture.framework in Frameworks */,
 				7A97FC941FCB267200158615 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,6 +137,7 @@
 		7A97FC971FCB268600158615 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7A45F23F21011BEA00DB2159 /* PromisedFuture.framework */,
 				7A97FC931FCB267200158615 /* Alamofire.framework */,
 			);
 			name = Frameworks;
@@ -185,7 +191,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0910;
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Alaeddine Me";
 				TargetAttributes = {
 					7A97FC771FCB231D00158615 = {
@@ -269,6 +275,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -276,6 +283,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -326,6 +334,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -333,6 +342,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -371,6 +381,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Networking/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -391,6 +402,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Networking/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
