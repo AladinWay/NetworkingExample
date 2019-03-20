@@ -1,1 +1,2 @@
-github "Alamofire/Alamofire" "71d09002e9b7d22a67b60a9f772e9aa5c8dafeda"
+github "Alamofire/Alamofire" "5.0.0-beta.3"
+github "aladinway/PromisedFuture" "1.0.1"
