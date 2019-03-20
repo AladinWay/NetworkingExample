@@ -14,7 +14,7 @@ class APIClient {
     @discardableResult
     private static func performRequest<T:Decodable>(route:APIRouter, decoder: JSONDecoder = JSONDecoder()) -> Future<T> {
         return Future(operation: { completion in
-            Alamofire.request(route).responseJSONDecodable(decoder: decoder, completionHandler: { (response: DataResponse<T>) in
+            AF.request(route).responseDecodable(decoder: decoder, completionHandler: { (response: DataResponse<T>) in
                 switch response.result {
                 case .success(let value):
                     completion(.success(value))
