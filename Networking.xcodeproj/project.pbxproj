@@ -196,6 +196,7 @@
 				TargetAttributes = {
 					7A97FC771FCB231D00158615 = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 1140;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -388,7 +389,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.itechnodev.Networking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -409,7 +410,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.itechnodev.Networking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
